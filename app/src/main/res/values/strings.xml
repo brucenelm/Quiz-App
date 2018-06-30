@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Quiz APP</string>
+
+    <string name="Question1">Q 1 - What is Android?</string>
+    <string name="Question1A">A - Android is a stack of software\'s for mobility</string>
+    <string name="Question1B">B - Google mobile device name</string>
+    <string name="Question1C">C - Virtual machine</string>
+    <string name="Question1D">D - None of the above</string>
+
+    <string name="Question2">Q 2 - How many threads are there in asyncTask in android?</string>
+    <string name="Question2A">A - Only one</string>
+    <string name="Question2B">B- Two</string>
+    <string name="Question2C">C - AsyncTask doesn\'t have tread</string>
+    <string name="Question2D">D - None of the Above</string>
+
+    <string name="Question3">Q 3 - Persist data can be stored in Android through</string>
+    <string name="Question3A">A - Shared Preferences</string>
+    <string name="Question3B">B - Internal/External storage</string>
+    <string name="Question3C">C - SQlite</string>
+    <string name="Question3D">D - Network servers.</string>
+    <string name="Question3E">E - All of above</string>
+
+    <string name="Question4">Q 4 - Which method is used to find GPS enabled or disabled pro-grammatically in android?</string>
+    <string name="Question4A">A - finish()</string>
+    <string name="Question4B">B - getGPSStatus()</string>
+    <string name="Question4C">C - onProviderDisable()</string>
+    <string name="Question4D">D - getGPS().</string>
+
+    <string name="Question5">Q 5 - How to fix crash using log cat in android?</string>
+    <string name="Question5A">A - Gmail</string>
+    <string name="Question5B">B - log cat contains the exception name along with the line number</string>
+    <string name="Question5C">C - Google search</string>
+    <string name="Question5D">D - None of the above.</string>
+
+    <string name="Question6">Q 6 - What are the JSON elements in android?</string>
+    <string name="Question6A">A - integer, boolean</string>
+    <string name="Question6B">B - boolean</string>
+    <string name="Question6C">C - null</string>
+    <string name="Question6D">D - Number, string, boolean, null, array, and object</string>
+
+    <string name="Question7">Q 7 - Number, string, boolean, null, array, and object</string>
+    <string name="Question7A">A - 10 sec</string>
+    <string name="Question7B">B - 5 sec</string>
+    <string name="Question7C">C - 1 min</string>
+    <string name="Question7D">D - None of the above</string>
+
+    <string name="Question8">Q 8 - How do you join two notifications in android?</string>
+    <string name="Question8A">A - Give same id for both notifications</string>
+    <string name="Question8B">B - Write notification code two times</string>
+    <string name="Question8C">C - It is not possible in android</string>
+    <string name="Question8D">C - A and B</string>
+    <string name="Question8E">D - A and C</string>
+
+    <string name="Question9">Q 9 - Persist data can be stored in Android through</string>
+    <string name="Question9A">A - Shared Preferences</string>
+    <string name="Question9B">B - Internal/External storage</string>
+    <string name="Question9C">C - SQlite</string>
+    <string name="Question9D">D - Network servers.</string>
+    <string name="Question9E">E - All of above</string>
+
+    <string name="Question10">Qn -10 Which view is used for text in android?</string>
+
+    <string name="answerButton">Answer</string>
+    <string name="submitButton">Submit</string>
+
+</resources>
+
