@@ -718,7 +718,7 @@
 
                         <EditText
                             android:id="@+id/edit10"
-                            android:layout_width="300dp"
+                            android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginLeft="8dp"
                             android:ems="10"
