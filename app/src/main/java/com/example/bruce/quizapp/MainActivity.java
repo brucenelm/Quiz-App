@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int score = 0;
+    int score = 0;  //Counts the scores
+    int clicks = 0; //Keeps track of the number of times the submit button is clicked
 
-    //Button Declaration
+    //Button Declaration for each Question, the number corresponds to the question number
     Button button_1;
     Button button_2;
     Button button_3;
@@ -25,13 +26,37 @@ public class MainActivity extends AppCompatActivity {
     Button button_8;
     Button button_9;
     Button button_10;
+    Button submitButton; //The submit Button
+
+    //Declare RadioGroup instances, the number corresponds to the question number
+    RadioGroup radioGroup1;
+    RadioGroup radioGroup2;
+    RadioGroup radioGroup4;
+    RadioGroup radioGroup5;
+    RadioGroup radioGroup6;
+    RadioGroup radioGroup7;
+    RadioGroup radioGroup8;
+    RadioGroup radioGroup9;
+
+    //Declare CheckBox Instances, the number corresponds to the question number and then options
+    CheckBox question3a1;
+    CheckBox question3a2;
+    CheckBox question3a3;
+    CheckBox question3a4;
+
+
+    //The Edit View
+    EditText editText;
+    //String to be used with the edit view
+    String answer10 = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Get Button Id from the Button View
+        //Get Button Objects from the Button View
         button_1 = findViewById(R.id.button1);
         button_2 = findViewById(R.id.button2);
         button_3 = findViewById(R.id.button3);
@@ -42,9 +67,31 @@ public class MainActivity extends AppCompatActivity {
         button_8 = findViewById(R.id.button8);
         button_9 = findViewById(R.id.button9);
         button_10 = findViewById(R.id.button10);
+        submitButton = findViewById(R.id.sub);
+
+        //Get the RadioGroup Objects from the RadioGroup View
+        radioGroup1 = findViewById(R.id.group1);
+        radioGroup2 = findViewById(R.id.group2);
+        radioGroup4 = findViewById(R.id.group4);
+        radioGroup5 = findViewById(R.id.group5);
+        radioGroup6 = findViewById(R.id.group6);
+        radioGroup7 = findViewById(R.id.group7);
+        radioGroup8 = findViewById(R.id.group8);
+        radioGroup9 = findViewById(R.id.group9);
+
+        //Get the CheckBox Objects from The CheckBox View
+        question3a1 = this.findViewById(R.id.question3a);
+        question3a2 = this.findViewById(R.id.question3b);
+        question3a3 = this.findViewById(R.id.question3c);
+        question3a4 = this.findViewById(R.id.question3d);
+
+        editText = findViewById(R.id.edit10);
+
+
     }
 
-    //Question 1 Calculation
+
+    //Question 1 Score Calculation
     RadioButton question1a;
     boolean answer1 = false;
 
@@ -62,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Question 2 Calculation
+    //Question 2 Score Calculation
     RadioButton question2a;
     boolean answer2 = false;
 
@@ -74,16 +121,12 @@ public class MainActivity extends AppCompatActivity {
             score = score + 1;
         } else {
 
-            score = score + 1;
+            score = score + 0;
         }
     }
 
 
-    //Calculation For Question 3
-    CheckBox question3a1;
-    CheckBox question3a2;
-    CheckBox question3a3;
-    CheckBox question3a4;
+    //Question 3 score Calculation
 
     boolean answer31 = false;
     boolean answer32 = false;
@@ -91,22 +134,12 @@ public class MainActivity extends AppCompatActivity {
     boolean answer34 = false;
 
     public void calcQuestion3(View v) {
-        question3a1 = this.findViewById(R.id.question3a);
-        question3a2 = this.findViewById(R.id.question3b);
-        question3a3 = this.findViewById(R.id.question3c);
-        question3a4 = this.findViewById(R.id.question3d);
-
         answer31 = question3a1.isChecked();
         answer32 = question3a2.isChecked();
         answer33 = question3a3.isChecked();
         answer34 = question3a4.isChecked();
 
-        if (answer31 && !answer32 && answer33 && !answer34) {
-
-
-            score = score + 2;
-
-        } else if ((answer31 && !answer32) || (answer31 && !answer34)) {
+        if ((answer31 && !answer32) || (answer31 && !answer34)) {
 
             score = score + 1;
         } else if ((answer33 && !answer32) || (answer33 && !answer34)) {
@@ -119,12 +152,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Question 4 Calculation
+    //Question 4 Score Calculation
     RadioButton question4c;
     boolean answer4 = false;
 
     public void calcQuestion4(View v) {
-        question4c = this.findViewById(R.id.question6c);
+        question4c = this.findViewById(R.id.question4c);
         answer4 = question4c.isChecked();
         if (answer4) {
 
@@ -137,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Question 5 Calculation
+    //Question 5 Score Calculation
     RadioButton question5b;
     boolean answer5 = false;
 
@@ -153,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Question 6 Calculation
+    //Question 6 Score Calculation
     RadioButton question6d;
     boolean answer6 = false;
 
@@ -169,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Question 7 Calculation
+    //Question 7 Score Calculation
     RadioButton question7b;
     boolean answer7;
 
@@ -185,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Question 8 Calculation
+    //Question 8 Score Calculation
     RadioButton question8e;
     boolean answer8 = false;
 
@@ -203,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Question 9 Calculation
+    //Question 9 Score Calculation
     RadioButton question9e;
     boolean answer9 = false;
 
@@ -222,13 +255,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Question 10 Calculation
+    //Question 10 Score Calculation
 
-    EditText editText;
-    String answer10 = "";
 
     public void calcQuestion10(View v) {
-        editText = this.findViewById(R.id.edit10);
+
         answer10 = editText.getText().toString();
 
         if (answer10.equals("TextView")) {
@@ -251,9 +282,61 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Disabling the The answers
+    private void answerDisable() {
 
-    public void onSubmit(View v) {
-        calcQuestion10(editText);
+//Looping through the RadioGroups to disable the Radio Buttons
+        for (int i = 0; i < radioGroup1.getChildCount(); i++) {
+            radioGroup1.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup2.getChildCount(); i++) {
+            radioGroup2.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup4.getChildCount(); i++) {
+            radioGroup4.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup5.getChildCount(); i++) {
+            radioGroup5.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup6.getChildCount(); i++) {
+            radioGroup6.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup7.getChildCount(); i++) {
+            radioGroup7.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup8.getChildCount(); i++) {
+            radioGroup8.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup9.getChildCount(); i++) {
+            radioGroup9.getChildAt(i).setEnabled(false);
+        }
+
+        for (int i = 0; i < radioGroup1.getChildCount(); i++) {
+            radioGroup1.getChildAt(i).setEnabled(false);
+        }
+
+        //The EditView is Disabled
+        editText.setEnabled(false);
+
+        //CheckBox objects are Disabled
+        question3a1.setEnabled(false);
+        question3a2.setEnabled(false);
+        question3a3.setEnabled(false);
+        question3a4.setEnabled(false);
+
+
+    }
+
+    //Making the answer buttons visible
+    private void showAnswerButtons() {
+
         button_1.setVisibility(View.VISIBLE);
         button_2.setVisibility(View.VISIBLE);
         button_3.setVisibility(View.VISIBLE);
@@ -264,53 +347,162 @@ public class MainActivity extends AppCompatActivity {
         button_8.setVisibility(View.VISIBLE);
         button_9.setVisibility(View.VISIBLE);
         button_10.setVisibility(View.VISIBLE);
-        display();
 
     }
 
 
-    //Show Answer for Question 1
+    //Enabling the The answers i.e Radio Buttons,Checkboxes and Edit View
+    private void answerEnable() {
+
+        //Looping through the RadioGroups to enable the individual radio buttons
+        for (int i = 0; i < radioGroup1.getChildCount(); i++) {
+            radioGroup1.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup2.getChildCount(); i++) {
+            radioGroup2.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup4.getChildCount(); i++) {
+            radioGroup4.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup5.getChildCount(); i++) {
+            radioGroup5.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup6.getChildCount(); i++) {
+            radioGroup6.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup7.getChildCount(); i++) {
+            radioGroup7.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup8.getChildCount(); i++) {
+            radioGroup8.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup9.getChildCount(); i++) {
+            radioGroup9.getChildAt(i).setEnabled(true);
+        }
+
+        for (int i = 0; i < radioGroup1.getChildCount(); i++) {
+            radioGroup1.getChildAt(i).setEnabled(true);
+        }
+
+        //Enabling the EditView object
+        editText.setEnabled(true);
+
+        //Enabling The Check boxes
+        question3a1.setEnabled(true);
+        question3a2.setEnabled(true);
+        question3a3.setEnabled(true);
+        question3a4.setEnabled(true);
 
 
-    public void setAnswer1(View v) {
-        RadioGroup radioGroup1 = this.findViewById(R.id.group1);
-        int idGroup1 = radioGroup1.getCheckedRadioButtonId();
+    }
+
+    //Hiding the Answer Buttons
+    private void hideAnswerButtons() {
+
+        button_1.setVisibility(View.INVISIBLE);
+        button_2.setVisibility(View.INVISIBLE);
+        button_3.setVisibility(View.INVISIBLE);
+        button_4.setVisibility(View.INVISIBLE);
+        button_5.setVisibility(View.INVISIBLE);
+        button_6.setVisibility(View.INVISIBLE);
+        button_7.setVisibility(View.INVISIBLE);
+        button_8.setVisibility(View.INVISIBLE);
+        button_9.setVisibility(View.INVISIBLE);
+        button_10.setVisibility(View.INVISIBLE);
 
 
-        if (idGroup1 != -1) {
+    }
 
-            if (answer1) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
 
-                Toast.makeText(this, "The right Answer is Option A", Toast.LENGTH_SHORT).show();
+    //Clears all the Answers
+    private void answerReset() {
 
-            }
+        //Resets the radio buttons
+        radioGroup1.clearCheck();
+        radioGroup2.clearCheck();
+        radioGroup4.clearCheck();
+        radioGroup5.clearCheck();
+        radioGroup6.clearCheck();
+        radioGroup7.clearCheck();
+        radioGroup8.clearCheck();
+        radioGroup9.clearCheck();
 
+        //Reset the EditView
+        editText.setText("");
+
+
+        //Resets the Checkboxes
+        question3a1.setChecked(false);
+        question3a2.setChecked(false);
+        question3a3.setChecked(false);
+        question3a4.setChecked(false);
+
+        //Resets the scores
+        score = 0;
+
+        //Resets the number of times the submit button is clicked
+        clicks = 0;
+
+
+    }
+
+    //Submits the Entire Quiz
+    public void onSubmit(View v) {
+
+        //Makes sure that the "calcQuestion10(editText)" does not increase the score each time the submit button is clicked on
+        if (clicks == 0) {
+            calcQuestion10(editText);   //Submit the edit view
+            showAnswerButtons();        //Shows the Answer Buttons
+            answerDisable();            //Makes sure no more answering after submitting
+            display();                  //Displays the total score
+            clicks++;
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+            display();
+            showAnswerButtons();
+            answerDisable();
 
         }
+
+    }
+
+    // Calls the Methods that do the resetting
+    public void onReset(View v) {
+        answerEnable();             //Will enable the the buttons and edit view
+        hideAnswerButtons();        //Will Hide the answer buttons
+        answerReset();              //Makes sure all answers are discarded
+    }
+
+    //Show Answer for Question 1
+
+    public void setAnswer1(View v) {
+
+        if (answer1) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
+        } else {
+
+            Toast.makeText(this, "The right Answer is Option A", Toast.LENGTH_SHORT).show();
+
+        }
+
     }
 
     //Show Answer for Question 2
     public void setAnswer2(View v) {
-        RadioGroup radioGroup2 = this.findViewById(R.id.group2);
-        int idGroup2 = radioGroup2.getCheckedRadioButtonId();
 
+        if (answer2) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
 
-        if (idGroup2 != -1) {
-
-            if (answer2) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option A", Toast.LENGTH_SHORT).show();
-
-            }
 
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option A", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -319,186 +511,121 @@ public class MainActivity extends AppCompatActivity {
     //Show Answer for Question 3
 
     public void setAnswer3(View v) {
-        if (answer31 || answer32 || answer33 || answer34) {
 
-            if (answer31 && !answer32 && answer33 && !answer34) {
+        if (answer31 && !answer32 && answer33 && !answer34) {
 
-                Toast.makeText(this, "Excellent!!!, That Was Owesome", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Excellent!!!, That Was Owesome", Toast.LENGTH_SHORT).show();
 
 
-            } else if ((answer31 && !answer32) || (answer31 && !answer34)) {
+        } else if ((answer31 && !answer32) || (answer31 && !answer34)) {
 
-                Toast.makeText(this, "Nice Try, You got one Correct though, the other Option was C", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nice Try, You got one Correct though, the other Option was C", Toast.LENGTH_SHORT).show();
 
-            } else if ((answer33 && !answer32) || (answer33 && !answer34)) {
-                Toast.makeText(this, "Nice Try, You got one Correct though, the other Option was A", Toast.LENGTH_SHORT).show();
-
-            } else {
-                Toast.makeText(this, "The Right Options are A and C", Toast.LENGTH_SHORT).show();
-            }
-
-            //Toast.makeText(this, "Answer : A", Toast.LENGTH_SHORT).show();
+        } else if ((answer33 && !answer32) || (answer33 && !answer34)) {
+            Toast.makeText(this, "Nice Try, You got one Correct though, the other Option was A", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(this, "Answer the Question First", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(this, "The Right Options are A and C", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     //Show Answer for Question 4
 
     public void setAnswer4(View v) {
-        RadioGroup radioGroup4 = this.findViewById(R.id.group4);
-        int idGroup4 = radioGroup4.getCheckedRadioButtonId();
 
 
-        if (idGroup4 != -1) {
-
-            if (answer4) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option C", Toast.LENGTH_SHORT).show();
-
-            }
-
+        if (answer4) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option C", Toast.LENGTH_SHORT).show();
 
         }
+
+
     }
 
     //Show Answer for Question 5
 
     public void setAnswer5(View v) {
-        RadioGroup radioGroup5 = this.findViewById(R.id.group5);
-        int idGroup5 = radioGroup5.getCheckedRadioButtonId();
 
 
-        if (idGroup5 != -1) {
-
-            if (answer5) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option B", Toast.LENGTH_SHORT).show();
-
-            }
-
+        if (answer5) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option B", Toast.LENGTH_SHORT).show();
 
         }
+
     }
 
 
     //Show Answer for Question 6
 
     public void setAnswer6(View v) {
-        RadioGroup radioGroup6 = this.findViewById(R.id.group6);
-        int idGroup6 = radioGroup6.getCheckedRadioButtonId();
 
-
-        if (idGroup6 != -1) {
-
-            if (answer6) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option D", Toast.LENGTH_SHORT).show();
-
-            }
-
+        if (answer6) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option D", Toast.LENGTH_SHORT).show();
 
         }
+
     }
 
 
     //Show Answer for Question 7
 
     public void setAnswer7(View v) {
-        RadioGroup radioGroup7 = this.findViewById(R.id.group7);
-        int idGroup7 = radioGroup7.getCheckedRadioButtonId();
 
-
-        if (idGroup7 != -1) {
-
-            if (answer7) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option B", Toast.LENGTH_SHORT).show();
-
-            }
-
+        if (answer7) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option B", Toast.LENGTH_SHORT).show();
 
         }
+
     }
 
     //Show Answer for Question 8
 
     public void setAnswer8(View v) {
-        RadioGroup radioGroup8 = this.findViewById(R.id.group8);
-        int idGroup8 = radioGroup8.getCheckedRadioButtonId();
 
-
-        if (idGroup8 != -1) {
-
-            if (answer8) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option E", Toast.LENGTH_SHORT).show();
-
-            }
-
+        if (answer8) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option E", Toast.LENGTH_SHORT).show();
 
         }
+
     }
 
     //Show Answer for Question 9
 
     public void setAnswer9(View v) {
-        RadioGroup radioGroup9 = this.findViewById(R.id.group9);
-        int idGroup9 = radioGroup9.getCheckedRadioButtonId();
 
-
-        if (idGroup9 != -1) {
-
-            if (answer9) {
-                Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right Answer is Option E", Toast.LENGTH_SHORT).show();
-
-            }
-
+        if (answer9) {
+            Toast.makeText(this, "Horray, You got it Right!!!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please Answer the Question First!!!", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "The right Answer is Option E", Toast.LENGTH_SHORT).show();
 
         }
+
     }
     //Show Answer for Question 10
 
     public void setAnswer10(View v) {
-        calcQuestion10(editText);
-
-        if (answer10 != null && !answer10.isEmpty() && !answer10.equals("null") || answer10 == " ") {
-            Toast.makeText(this, "Answer the Question First", Toast.LENGTH_SHORT).show();
+        if (answer10.equals("TextView")) {
+            Toast.makeText(this, "Excellent", Toast.LENGTH_SHORT).show();
         } else {
 
-            if (answer10.equals("TextView")) {
-                Toast.makeText(this, "Excellent", Toast.LENGTH_SHORT).show();
-            } else {
-
-                Toast.makeText(this, "The right answer is TextField", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(this, "The right answer is TextField", Toast.LENGTH_SHORT).show();
         }
     }
 

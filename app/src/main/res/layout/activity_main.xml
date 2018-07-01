@@ -78,14 +78,16 @@
 
                 <Button
                     android:id="@+id/button1"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer1"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
             </RelativeLayout>
@@ -149,14 +151,16 @@
 
                 <Button
                     android:id="@+id/button2"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer2"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
             </RelativeLayout>
@@ -221,14 +225,16 @@
 
                 <Button
                     android:id="@+id/button3"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer3"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 
@@ -293,14 +299,16 @@
 
                 <Button
                     android:id="@+id/button4"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer4"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 
@@ -364,14 +372,16 @@
 
                 <Button
                     android:id="@+id/button5"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer5"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 
@@ -434,14 +444,16 @@
 
                 <Button
                     android:id="@+id/button6"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer6"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
             </RelativeLayout>
@@ -503,14 +515,16 @@
 
                 <Button
                     android:id="@+id/button7"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer7"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 
@@ -541,7 +555,7 @@
                         android:id="@+id/question8a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="calcQuestion10"
+                        android:onClick="calcQuestion8"
                         android:text="@string/Question8A"
                         android:textSize="15sp" />
 
@@ -557,7 +571,7 @@
                         android:id="@+id/question8c"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="calcQuestion10"
+                        android:onClick="calcQuestion8"
                         android:text="@string/Question8C"
                         android:textSize="15sp" />
 
@@ -581,14 +595,16 @@
 
                 <Button
                     android:id="@+id/button8"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer8"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 
@@ -660,74 +676,107 @@
 
                 <Button
                     android:id="@+id/button9"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
                     android:onClick="setAnswer9"
                     android:text="@string/answerButton"
-                    android:textSize="15sp"
+                    android:textColor="#181009"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/answer"
+                    <LinearLayout
+                        android:id="@+id/layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="8dp"
-                        android:text="@string/Question10"
-                        android:textColor="#000000"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/answer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="2dp"
+                            android:text="@string/Question10"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit10"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:onClick="calcQuestion10"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button10"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:onClick="setAnswer10"
+                        android:text="@string/answerButton"
+                        android:textColor="#181009"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
 
-                    <EditText
-                        android:id="@+id/edit10"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="8dp"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:onClick="calcQuestion10"
-                        android:textSize="15sp" />
-                </LinearLayout>
 
-                <Button
-                    android:id="@+id/button10"
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:background="#7B3F00"
-                    android:onClick="setAnswer10"
-                    android:text="@string/answerButton"
-                    android:textSize="15sp"
-                    android:visibility="invisible" />
-            </RelativeLayout>
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginVertical="20dp"
+                        android:background="#7B3F00"
+                        android:onClick="onSubmit"
+                        android:text="@string/submitButton"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:background="#7B3F00"
+                        android:onClick="onReset"
+                        android:text="@string/resetButton"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/sub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#7B3F00"
-            android:onClick="onSubmit"
-            android:text="@string/submitButton"
-            android:textSize="15sp" />
 
     </RelativeLayout>
 </ScrollView>
